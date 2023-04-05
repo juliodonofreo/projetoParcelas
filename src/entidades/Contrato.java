@@ -45,4 +45,8 @@ public class Contrato {
     public void addParcela(Parcela parcela){
         parcelas.add(parcela);
     }
+
+    public List<Parcela> getParcelas(){
+        return parcelas;
+    }
 }
