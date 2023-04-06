@@ -5,8 +5,8 @@ import java.time.format.DateTimeFormatter;
 
 public class Parcela {
 
-    LocalDate dataVencimento;
-    double valor;
+    private LocalDate dataVencimento;
+    private double valor;
 
     public Parcela(LocalDate dataVencimento, double valor) {
         this.dataVencimento = dataVencimento;

@@ -9,12 +9,10 @@ import validacoes.Validacoes;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
         ServicoContrato servicoContrato = new ServicoContrato(new ServicoPaypal());
         DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 

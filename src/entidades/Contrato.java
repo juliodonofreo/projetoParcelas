@@ -6,11 +6,11 @@ import java.util.List;
 
 public class Contrato {
 
-    Integer numero;
-    LocalDate data;
-    Double valorTotal;
+    private Integer numero;
+    private LocalDate data;
+    private Double valorTotal;
 
-    List<Parcela> parcelas = new ArrayList<>();
+    private List<Parcela> parcelas = new ArrayList<>();
 
     public Contrato(Integer numero, LocalDate data, Double valorTotal) {
         this.numero = numero;
