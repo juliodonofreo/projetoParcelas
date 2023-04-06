@@ -4,6 +4,7 @@ import entidades.Contrato;
 import entidades.Parcela;
 import servicos.ServicoContrato;
 import servicos.ServicoPaypal;
+import validacoes.Validacoes;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -18,14 +19,10 @@ public class Main {
         DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
         System.out.println("Entre os dados do contrato: ");
-        System.out.print("Número: ");
-        int numero = sc.nextInt();
-        System.out.print("Data (dd/MM/yyyy): ");
-        LocalDate data = LocalDate.parse(sc.next(), fmt);
-        System.out.print("Valor do contrato: ");
-        double valor = sc.nextDouble();
-        System.out.print("Entre com o número de parcelas: ");
-        int quantidadeParcelas = sc.nextInt();
+        int numero = Validacoes.validarInteiro("Número: ");
+        LocalDate data = Validacoes.validarData("Data (dd/mm/yyyy): ", fmt);
+        double valor = Validacoes.validarDouble("Valor do contrato: ");
+        int quantidadeParcelas = Validacoes.validarInteiro("Entre com o número de parcelas: ");
 
         Contrato contrato = new Contrato(numero, data, valor);
         servicoContrato.processarContrato(contrato, quantidadeParcelas);
